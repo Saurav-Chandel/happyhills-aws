@@ -109,10 +109,10 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # }
 
 
-import dj_database_url
-db_from_env=dj_database_url.config(conn_max_age=600)
-# DATABASES['default']=dj_database_url.config(default='postgres://xkxqixwxttrumy:64b2e0c73330e789828266dc3d7d30a0292fa77e9f5eee0bfc56c5cf840c3f33@ec2-44-194-113-156.compute-1.amazonaws.com:5432/dfhtoccch55lfv')
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+# db_from_env=dj_database_url.config(conn_max_age=600)
+# # DATABASES['default']=dj_database_url.config(default='postgres://xkxqixwxttrumy:64b2e0c73330e789828266dc3d7d30a0292fa77e9f5eee0bfc56c5cf840c3f33@ec2-44-194-113-156.compute-1.amazonaws.com:5432/dfhtoccch55lfv')
+# DATABASES['default'].update(db_from_env)
 
 
 
