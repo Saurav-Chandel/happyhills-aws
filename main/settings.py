@@ -96,17 +96,17 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": os.environ.get("RDS_DB_NAMeeEEE", "explore_new"),
-#         "USER": os.environ.get("RDS_USERNAeeME", "postgres"),
-#         "PASSWORD": os.environ.get("ee", "root"),
-#         "HOST": os.environ.get("RDS_HeeeOSTNAME", "127.0.0.1"),
-#         "PORT": os.environ.get("eeeeeeeee", "5432"),
-#         "TIME_ZONE": "Asia/Kolkata",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "happyhills",
+        "USER": "admin",
+        "HOST": 'database1.cgfk4lzddsdg.us-east-1.rds.amazonaws.com',
+        "PASSWORD": 'Chandelsaurav817',
+        "PORT": '3306',
+        # "TIME_ZONE": "Asia/Kolkata",
+    }
+}
 
 
 # import dj_database_url
