@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     "package",
     "shop",
     "review",
-    "corsheaders",  
+    "corsheaders", 
+    'storages' 
    
     # 'app.entries',
 ]
@@ -68,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
-     
+
 ]
 
 ROOT_URLCONF = 'main.urls'
@@ -92,7 +93,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'main.wsgi.application'
 # ASGI_APPLICATION = 'main.asgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -107,6 +107,8 @@ DATABASES = {
         # "TIME_ZONE": "Asia/Kolkata",
     }
 }
+
+
 
 
 # import dj_database_url
@@ -210,7 +212,39 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+SERVE_FROM_S3 = True
+
+if not SERVE_FROM_S3:
+
+    
+    STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+    STATIC_URL = "/static_url/"
+    MEDIA_URL = "/media_url/"
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
+
+
+else:
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
+    AWS_ACCESS_KEY_ID = os.environ.get(
+        "AWS_ACCESS_KEY_IDDDD", "AKIA2K5WZGM5LPVKVIKY"
+    )
+    AWS_SECRET_ACCESS_KEY = os.environ.get(
+        "AWS_ACCESS_KEY_IDDDD", "biovwSYM8PUJPK1lqkOdpWZHZy3VzQUIFezO7LM"
+    )
+    AWS_S3_REGION_NAME = "US East (N. Virginia) us-east-1"  # e.g. us-east-2
+    AWS_STORAGE_BUCKET_NAME = "happyhills-s3"
+    AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+    AWS_S3_CUSTOM_DOMAIN = "d2dr6wwncpi0to.cloudfront.net"
+    AWS_S3_OBJECT_PARAMETERS = {
+        "CacheControl": "max-age=86400",
+    }
+    AWS_LOCATION = "static"
+
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+    DEFAULT_FILE_STORAGE = "main.storage_backends.MediaStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -221,10 +255,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_URL = '/static/'
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
-STATIC_URL = "/static_url/"
-MEDIA_URL = "/media_url/"
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+# STATIC_URL = "/static_url/"
+# MEDIA_URL = "/media_url/"
+
+
+
+
 
 # STATICFILES_DIRS = [
 #                     os.path.join(BASE_DIR, 'static')
