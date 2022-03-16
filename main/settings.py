@@ -231,6 +231,11 @@ else:
     MEDIA_URL = "/media_url/"
     STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_den"),)
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+STATIC_URL = "/static_url/"
+MEDIA_URL = "/media_url/"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_den"),)
     # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
     # AWS_ACCESS_KEY_ID = "AKIA2K5WZGM5LPVKVIKY"
     # AWS_SECRET_ACCESS_KEY = "biovwSYM8PUJPK1IqkOdpWZHZy3VzQUIFezO7LM"
