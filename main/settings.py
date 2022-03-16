@@ -215,7 +215,7 @@ USE_TZ = True
 # SERVE_FROM_S3 = True
 
 if not DEBUG:
-    from aws.conf import *
+    from main.aws.conf import *
 
     
     # STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
