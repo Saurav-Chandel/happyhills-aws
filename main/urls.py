@@ -81,7 +81,7 @@ urlpatterns = [
 
 
 # if settings.DEBUG:
-if not settings.SERVE_FROM_S3:
+if not settings:
     urlpatterns += [] + static(
         settings.STATIC_URL, document_root=settings.STATIC_ROOT
     )
