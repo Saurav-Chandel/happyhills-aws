@@ -228,7 +228,7 @@ else:
     # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
     AWS_ACCESS_KEY_ID = "AKIA2K5WZGM5LPVKVIKY"
     AWS_SECRET_ACCESS_KEY = "biovwSYM8PUJPK1IqkOdpWZHZy3VzQUIFezO7LM"
-    AWS_S3_REGION_NAME = "US East (N. Virginia) us-east-1"  # e.g. us-east-2
+    AWS_S3_REGION_NAME = "us-east-1"  # e.g. us-east-2
     AWS_STORAGE_BUCKET_NAME = "happyhills-s3"
     AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
     # AWS_S3_CUSTOM_DOMAIN = "d2dr6wwncpi0to.cloudfront.net"
