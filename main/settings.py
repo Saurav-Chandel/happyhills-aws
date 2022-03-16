@@ -224,13 +224,10 @@ if not SERVE_FROM_S3:
     STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
 
 else:
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
-    AWS_ACCESS_KEY_ID = os.environ.get(
-        "AWS_ACCESS_KEY_IDDDD", "AKIA2K5WZGM5LPVKVIKY"
-    )
-    AWS_SECRET_ACCESS_KEY = os.environ.get(
-        "AWS_ACCESS_KEY_IDDDD", "biovwSYM8PUJPK1IqkOdpWZHZy3VzQUIFezO7LM"
-    )
+
+    # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
+    AWS_ACCESS_KEY_ID = "AKIA2K5WZGM5LPVKVIKY"
+    AWS_SECRET_ACCESS_KEY = "biovwSYM8PUJPK1IqkOdpWZHZy3VzQUIFezO7LM"
     AWS_S3_REGION_NAME = "US East (N. Virginia) us-east-1"  # e.g. us-east-2
     AWS_STORAGE_BUCKET_NAME = "happyhills-s3"
     AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
