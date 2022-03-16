@@ -212,35 +212,35 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-SERVE_FROM_S3 = False
+# SERVE_FROM_S3 = False
 
-if not SERVE_FROM_S3:
+# if not SERVE_FROM_S3:
 
     
-    STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
-    STATIC_URL = "/static_url/"
-    MEDIA_URL = "/media_url/"
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+STATIC_URL = "/static_url/"
+MEDIA_URL = "/media_url/"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
 
-else:
+# else:
 
-    # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
-    AWS_ACCESS_KEY_ID = "AKIA2K5WZGM5LPVKVIKY"
-    AWS_SECRET_ACCESS_KEY = "biovwSYM8PUJPK1IqkOdpWZHZy3VzQUIFezO7LM"
-    AWS_S3_REGION_NAME = "us-east-1"  # e.g. us-east-2
-    AWS_STORAGE_BUCKET_NAME = "happyhills-s3"
-    AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
-    # AWS_S3_CUSTOM_DOMAIN = "d2dr6wwncpi0to.cloudfront.net"
-    AWS_S3_OBJECT_PARAMETERS = {
-        "CacheControl": "max-age=86400",
-    }
-    AWS_LOCATION = "static"
+#     # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
+#     AWS_ACCESS_KEY_ID = "AKIA2K5WZGM5LPVKVIKY"
+#     AWS_SECRET_ACCESS_KEY = "biovwSYM8PUJPK1IqkOdpWZHZy3VzQUIFezO7LM"
+#     AWS_S3_REGION_NAME = "us-east-1"  # e.g. us-east-2
+#     AWS_STORAGE_BUCKET_NAME = "happyhills-s3"
+#     AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+#     # AWS_S3_CUSTOM_DOMAIN = "d2dr6wwncpi0to.cloudfront.net"
+#     AWS_S3_OBJECT_PARAMETERS = {
+#         "CacheControl": "max-age=86400",
+#     }
+#     AWS_LOCATION = "static"
 
-    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+#     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+#     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
-    DEFAULT_FILE_STORAGE = "main.storage_backends.MediaStorage"
+#     DEFAULT_FILE_STORAGE = "main.storage_backends.MediaStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
