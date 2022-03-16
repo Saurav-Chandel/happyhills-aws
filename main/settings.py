@@ -229,7 +229,7 @@ else:
         "AWS_ACCESS_KEY_IDDDD", "AKIA2K5WZGM5LPVKVIKY"
     )
     AWS_SECRET_ACCESS_KEY = os.environ.get(
-        "AWS_ACCESS_KEY_IDDDD", "biovwSYM8PUJPK1lqkOdpWZHZy3VzQUIFezO7LM"
+        "AWS_ACCESS_KEY_IDDDD", "biovwSYM8PUJPK1IqkOdpWZHZy3VzQUIFezO7LM"
     )
     AWS_S3_REGION_NAME = "US East (N. Virginia) us-east-1"  # e.g. us-east-2
     AWS_STORAGE_BUCKET_NAME = "happyhills-s3"
