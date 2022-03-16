@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mh^y2jkcs4f)n+!d3*li^i+1l^@@bgvdtrr9k=saqz@pt@qi4_
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -214,22 +214,22 @@ USE_TZ = True
 
 # SERVE_FROM_S3 = True
 
-# if not DEBUG:
-#     from main.aws.conf import *
+if not DEBUG:
+    from main.aws.conf import *
 
     
-#     # STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
-#     # MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
-#     # STATIC_URL = "/static_url/"
-#     # MEDIA_URL = "/media_url/"
-#     # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
+    # STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+    # MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+    # STATIC_URL = "/static_url/"
+    # MEDIA_URL = "/media_url/"
+    # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
 
-# else:
-STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
-STATIC_URL = "/static_url/"
-MEDIA_URL = "/media_url/"
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_den"),)
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+    STATIC_URL = "/static_url/"
+    MEDIA_URL = "/media_url/"
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_den"),)
 
     # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
     # AWS_ACCESS_KEY_ID = "AKIA2K5WZGM5LPVKVIKY"
