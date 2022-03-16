@@ -223,7 +223,6 @@ if not SERVE_FROM_S3:
     MEDIA_URL = "/media_url/"
     STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
 
-
 else:
     STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
     AWS_ACCESS_KEY_ID = os.environ.get(
@@ -235,7 +234,7 @@ else:
     AWS_S3_REGION_NAME = "US East (N. Virginia) us-east-1"  # e.g. us-east-2
     AWS_STORAGE_BUCKET_NAME = "happyhills-s3"
     AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
-    AWS_S3_CUSTOM_DOMAIN = "d2dr6wwncpi0to.cloudfront.net"
+    # AWS_S3_CUSTOM_DOMAIN = "d2dr6wwncpi0to.cloudfront.net"
     AWS_S3_OBJECT_PARAMETERS = {
         "CacheControl": "max-age=86400",
     }
