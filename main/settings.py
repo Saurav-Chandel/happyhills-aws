@@ -214,8 +214,8 @@ USE_TZ = True
 
 # SERVE_FROM_S3 = True
 
-if not DEBUG:
-    from main.aws.conf import *
+# if not DEBUG:
+#     from main.aws.conf import *
 
     
     # STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
@@ -224,12 +224,12 @@ if not DEBUG:
     # MEDIA_URL = "/media_url/"
     # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
 
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
-    STATIC_URL = "/static_url/"
-    MEDIA_URL = "/media_url/"
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_den"),)
+# else:
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+STATIC_URL = "/static_url/"
+MEDIA_URL = "/media_url/"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_cdn"),)
 
 
     # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
