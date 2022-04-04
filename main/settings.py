@@ -26,10 +26,9 @@ SECRET_KEY = 'django-insecure-mh^y2jkcs4f)n+!d3*li^i+1l^@@bgvdtrr9k=saqz@pt@qi4_
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -217,7 +216,6 @@ USE_TZ = True
 if not DEBUG:
     from main.aws.conf import *
 
-    
     # STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
     # MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
     # STATIC_URL = "/static_url/"
