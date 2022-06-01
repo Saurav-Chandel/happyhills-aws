@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mh^y2jkcs4f)n+!d3*li^i+1l^@@bgvdtrr9k=saqz@pt@qi4_
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -106,6 +106,8 @@ DATABASES = {
       
     }
 }
+
+
 
 
 # import dj_database_url
@@ -322,3 +324,39 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     "x-csrftoken",
 #     "x-requested-with",
 # ]
+
+
+
+
+#while deploy on aws 
+
+###sudo nano /etc/systemd/system/gunicorn.socket 
+# [Unit]
+# Description=gunicorn socket
+
+# [Socket]
+# ListenStream=/run/gunicorn.sock
+
+# [Install]
+# WantedBy=sockets.target
+
+
+###sudo nano /etc/systemd/system/gunicorn.service
+# [Unit]
+# Description=gunicorn daemon
+# Requires=gunicorn.socket
+# After=network.target
+
+# [Service]
+# User=ubuntu
+# Group=www-data
+# WorkingDirectory=/home/ubuntu/project/happyhills-aws
+# ExecStart=/home/ubuntu/project/env/bin/gunicorn \
+#          --access-logfile - \
+#          --workers 3 \
+#          --bind unix:/run/gunicorn.sock \
+#          main.wsgi:application
+
+# [Install]
+# WantedBy=multi-user.target
+
