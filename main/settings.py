@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mh^y2jkcs4f)n+!d3*li^i+1l^@@bgvdtrr9k=saqz@pt@qi4_
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -100,14 +100,12 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "happyhills",
         "USER": "admin",
-        "HOST":'database-1.c2ince2oewy3.us-east-1.rds.amazonaws.com',
-        "PASSWORD":'Chandelsaurav817',
+        "HOST": 'database-1.c2ince2oewy3.us-east-1.rds.amazonaws.com',
+        "PASSWORD": 'Chandelsaurav817',
         "PORT": '3306',
-        "TIME_ZONE": "us-east-1c",
+      
     }
 }
-
-
 
 
 # import dj_database_url
