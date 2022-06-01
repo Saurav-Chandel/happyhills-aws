@@ -99,8 +99,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "happyhills",
-        "USER": "admin",
-        "HOST": 'database-1.c2ince2oewy3.us-east-1.rds.amazonaws.com',
+        "USER": "happyhills",
+        "HOST": 'happyhills.c2ince2oewy3.us-east-1.rds.amazonaws.com',
         "PASSWORD": 'Chandelsaurav817',
         "PORT": '3306',
         # "TIME_ZONE": "Asia/Kolkata",
