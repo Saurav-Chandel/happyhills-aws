@@ -8,5 +8,5 @@ class MediaStorage(S3Boto3Storage):
     file_overwrite = True
 
 class StaticStorage(S3Boto3Storage):
-    bucket_name = 'my-app-bucket'
+    bucket_name = settings.AWS_STORAGE_BUCKET_NAME
     location = 'static'
