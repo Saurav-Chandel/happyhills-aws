@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mh^y2jkcs4f)n+!d3*li^i+1l^@@bgvdtrr9k=saqz@pt@qi4_
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -247,7 +247,7 @@ else:
     # STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
     # DEFAULT_FILE_STORAGE = "main.storage_backends.MediaStorage"
-
+AWS_STORAGE_BUCKET_NAME = "happyhills-s3bucket"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
