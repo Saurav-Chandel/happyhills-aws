@@ -7,16 +7,16 @@ AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = True
 AWS_S3_REGION_NAME = "us-east-1"  # e.g. us-east-2
 AWS_STORAGE_BUCKET_NAME = "happyhills-s3bucket"
-# AWS_DEFAULT_ACL=None
+AWS_DEFAULT_ACL=None
 AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME   
 # AWS_S3_CUSTOM_DOMAIN = "d2dr6wwncpi0to.cloudfront.net"
-AWS_S3_OBJECT_PARAMETERS = {
-    "CacheControl": "max-age=86400",
-}
+# AWS_S3_OBJECT_PARAMETERS = {
+#     "CacheControl": "max-age=86400",
+# }
 # AWS_LOCATION = "static"
 # STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = "main.aws.utils.MediaRootS3BotoStorage"
-DEFAULT_FILE_STORAGE = "main.aws.utils.StaticRootS3BotoStorage"
+STATICFILES_STORAGE = "main.aws.utils.StaticRootS3BotoStorage"
+DEFAULT_FILE_STORAGE = "main.aws.utils.MediaRootS3BotoStorage"
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
 
