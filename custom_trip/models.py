@@ -29,7 +29,7 @@ class District(models.Model):
     difficulty_level = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Destination(models.Model):
@@ -49,6 +49,6 @@ class Destination(models.Model):
     
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
         
