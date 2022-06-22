@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mh^y2jkcs4f)n+!d3*li^i+1l^@@bgvdtrr9k=saqz@pt@qi4_
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -95,20 +95,19 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
+sql_mode='STRICT_TRANS_TABLES';
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "happyhills",
         "USER": "admin",
-        "HOST": 'database-1.c2ince2oewy3.us-east-1.rds.amazonaws.com',
+        "HOST": 'happyhills.c2ince2oewy3.us-east-1.rds.amazonaws.com',
         "PASSWORD": 'Chandelsaurav817',
         "PORT": '3306',
       
     }
 }
-
-
-
 
 # import dj_database_url
 # db_from_env=dj_database_url.config(conn_max_age=600)
@@ -361,3 +360,20 @@ CORS_ALLOW_ALL_ORIGINS = True
 # [Install]
 # WantedBy=multi-user.target
 
+# [Unit]
+# Description=gunicorn daemon
+# Requires=gunicorn.socket
+# After=network.target
+
+# [Service]
+# User=ubuntu
+# Group=www-data
+# WorkingDirectory=/home/ubuntu/project/clg-final-project-eshop
+# ExecStart=/home/ubuntu/project/env/bin/gunicorn \
+#          --access-logfile - \
+#          --workers 3 \
+#          --bind unix:/run/gunicorn.sock \
+#          main.wsgi:application
+
+# [Install]
+# WantedBy=multi-user.target

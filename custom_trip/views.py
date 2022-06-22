@@ -284,8 +284,8 @@ class GetDistrict(APIView):
     csrf_exempt
     def get_object(self, pk):
         try:
-            return District.objects.get(pk=pk)
-        except District.DoesNotExist:
+            return D.objects.get(pk=pk)
+        except D.DoesNotExist:
             raise ResponseNotFound()
 
     def get(self, request, pk):
@@ -323,8 +323,8 @@ class UpdateDistrict(APIView):
 
     def get_object(self, pk):
         try:
-            return District.objects.get(pk=pk)
-        except District.DoesNotExist:
+            return D.objects.get(pk=pk)
+        except D.DoesNotExist:
             raise ResponseNotFound()
 
     @swagger_auto_schema(
@@ -375,8 +375,8 @@ class DeleteDistrict(APIView):
     @csrf_exempt
     def get_object(self, pk):
         try:
-            return District.objects.get(pk=pk)
-        except District.DoesNotExist:
+            return D.objects.get(pk=pk)
+        except D.DoesNotExist:
             raise ResponseNotFound()
 
     def delete(self, request, pk):
@@ -442,7 +442,7 @@ class CreateDestination(APIView):
 
 
     @swagger_auto_schema(
-        operation_description="create District",
+        operation_description="create Destination",
         request_body=DestinationSerializer,
     )
     @csrf_exempt
